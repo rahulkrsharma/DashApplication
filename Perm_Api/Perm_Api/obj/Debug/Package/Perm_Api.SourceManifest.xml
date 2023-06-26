@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<sitemanifest>
+  <IisApp path="C:\Users\priya\source\repos\Perm_Api\Perm_Api\obj\Debug\Package\PackageTmp" />
+  <setAcl path="C:\Users\priya\source\repos\Perm_Api\Perm_Api\obj\Debug\Package\PackageTmp" setAclResourceType="Directory" />
+  <setAcl path="C:\Users\priya\source\repos\Perm_Api\Perm_Api\obj\Debug\Package\PackageTmp" setAclUser="anonymousAuthenticationUser" setAclResourceType="Directory" />
+</sitemanifest>
