@@ -1,0 +1,29 @@
+<div class="row" >
+  <h2>Private Page</h2>
+</div>
+<div class="separator mb-5"></div>
+  <div class="row">
+    <div class="col-xl-6 col-lg-12 mb-4">
+      <app-watchlist [watchlists]="watchListData"></app-watchlist>
+
+  </div>
+  <div class="col-xl-6 col-lg-12 mb-4">
+   <app-goals [title]="goalstitle"></app-goals>    
+  </div>
+   </div>
+   <div class="separator mb-5"></div>
+  <div class="row">
+      <div class="col-xl-6 col-lg-12 mb-4">
+        <app-newswatchlist [title]="newswatchlisttitle"></app-newswatchlist>
+      </div>
+     
+      <div class="col-xl-6 col-lg-12 mb-4">
+        <app-compkpi [title]="costincometitle" [companyKpi]="singleStockInfo"></app-compkpi>     
+      </div>
+   </div>
+   <div class="separator mb-5"></div>
+   <div class="row">
+    <div class="col-12 mb-4">
+        <app-sales-chart-card [title]="salescharttitle"></app-sales-chart-card>
+    </div>
+  </div>

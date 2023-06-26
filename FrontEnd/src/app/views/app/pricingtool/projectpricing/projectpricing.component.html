@@ -1,0 +1,94 @@
+<app-list-page-header [displayMode]="displayMode" [itemOptionsPerPage]="[5,10,20]" [itemsPerPage]="itemsPerPage"
+  [selectAllState]="selectAllState" (changeDisplayMode)="changeDisplayMode($event)" (addNewItem)="showAddNewModal()"
+  (selectAllChange)="selectAllChange($event)" (itemsPerPageChange)="itemsPerPageChange($event)"
+  (changeOrderBy)="changeOrderBy($event)" (searchKeyUp)="searchKeyUp($event)">
+</app-list-page-header>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+  </ngx-spinner>
+  <div class="row">
+    <div class="col-12 mb-4 data-table-rows">
+      <ngx-datatable [rows]="projectsList" [columns]="columns" [columnMode]="ColumnMode.flex" [limit]="itemsPerPage" [headerHeight]="20"
+        [footerHeight]="100" #table [sorts]="[{ prop: 'title', dir: 'asc' }]" (select)="onSelect($event)"
+        [selected]="selected" [selectionType]="SelectionType.checkbox">
+        <ngx-datatable-column name="Client Name" [flexGrow]="1">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            <!-- <a [routerLink]="['/app/newprojectpricing']" [queryParams]="{projectId:this.projectId}" style="color: darkblue"> 
+              {{row.ClientName}}
+             </a>  -->
+             <a [attr.href]="row.ProjectURL"  style="color: darkblue"> 
+              {{row.ClientName}}
+             </a> 
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Project Name" [flexGrow]="1.8">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{ row.ProjectName }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Levant Lead" [flexGrow]="1">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{ row.LevantLead }}
+          </ng-template>
+        </ngx-datatable-column> 
+        <ngx-datatable-column name="Location" [flexGrow]="1">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{ row.Location }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="StartDate" [flexGrow]="1">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{ row.ProjectStartDate }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="EndDate" [flexGrow]="1">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+          {{ row.ProjectEndDate }}
+          </ng-template>
+        </ngx-datatable-column>
+        <ngx-datatable-column name="Status" [flexGrow]="1">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{ row.Status }}
+          </ng-template>
+        </ngx-datatable-column>
+        <!-- <ngx-datatable-column name="Service Offering" [flexGrow]="1.8">
+          <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+            {{ row.ServiceOffering }}
+          </ng-template>
+        </ngx-datatable-column> -->
+        <ngx-datatable-column name="Total Revenue" [flexGrow]="1">
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              {{ row.TotalRevenue }}
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="Created Date" [flexGrow]="1.4">
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              {{ row.CreatedDate }}
+            </ng-template>
+          </ngx-datatable-column> 
+          <ngx-datatable-column name="" [flexGrow]="0.4">
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                <i class="material-icons" style="color: red;margin-left: -30px;" (click)="deletePricing(rowIndex,row.ProjectId)">delete</i>
+            </ng-template>
+          </ngx-datatable-column> 
+          <ngx-datatable-footer>
+            <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize"
+              let-selectedCount="selectedCount" let-curPage="curPage" let-offset="offset" let-limit="limit">
+              <div class="w-100 d-flex justify-content-center">
+                <pagination [totalItems]="rowCount" [itemsPerPage]="pageSize" [maxSize]="5"
+                  (pageChanged)="table.onFooterPage($event)"
+                  [customNextTemplate]="nextTemplate" [customPreviousTemplate]="prevTemplate">
+                </pagination>
+              </div>
+            </ng-template>
+          </ngx-datatable-footer>
+        </ngx-datatable>
+      </div>
+    </div>
+    
+    <ng-template #nextTemplate let-disabled="disabled" let-currentPage="currentPage">
+      <i class='simple-icon-arrow-right'></i>
+    </ng-template>
+    <ng-template #prevTemplate let-disabled="disabled" let-currentPage="currentPage">
+      <i class='simple-icon-arrow-left'></i>
+    </ng-template>

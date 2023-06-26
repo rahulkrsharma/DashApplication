@@ -1,0 +1,8 @@
+<h5 class="card-title">{{title}}</h5>
+<div *ngFor="let news of stockResult;" class="col-12 mb-12">
+    <span style="font-weight: bold;">{{news.StockName}}</span>
+    <div *ngFor="let news of news.RssNews;" class="col-12 mb-12">
+        <span style="color: black;"> {{news.Time}}</span> - <a style="color: blue;" href="{{news.NewsLink}}">{{news.Title}}</a> 
+    </div>
+    <br>
+</div>

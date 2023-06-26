@@ -1,0 +1,1312 @@
+<div>
+  <div class="row">
+    <div class="col-12 projectRevenue mb-1 truncate">
+      <div class="card mb-4" style="height: 60px;">
+        <span class="headingDesign">Project Pricing</span>
+      </div>
+    </div>  
+  </div>
+    <div class="row">
+        <div class="col-2.4">
+          <div class="card d-flex flex-row">
+            <a href="javascript:;">
+              <!-- <img alt="Profile Picture" src="/assets/img/profiles/l-1.jpg" /> -->
+              <img alt="Profile" src="/assets/img/pricing/TotalRevenue.png"
+                class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+            </a>
+            <div class=" d-flex flex-grow-1 min-width-zero">
+              <div
+                class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                <div class="min-width-zero">
+                  <a href="javascript:;">
+                    <p class="projectRevenue mb-1 truncate">Total Revenue</p>
+                  </a>
+                  <p class="projectRevenueText text-small"><span *ngIf="projectDetails.TotalRevenue">$</span>{{ projectDetails.TotalRevenue }}</p>
+                  <p class="projectRevenueText text-small"><span style="font-size: 12px;"></span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div class="revenueCalc">
+            <div class="card mb-4 ">
+              <div class="card d-flex flex-row">
+                <a href="javascript:;">
+                  <!-- <img alt="Profile Picture" src="/assets/img/profiles/l-1.jpg" /> -->
+                  <img alt="Profile" src="/assets/img/pricing/TotalCost.png"
+                    class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                </a>
+                <div class=" d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                    <div class="min-width-zero">
+                      <a href="javascript:;">
+                        <p class="projectRevenue mb-1 truncate">Total Cost</p>
+                      </a>
+                      <p class="projectRevenueText text-small"><span *ngIf="projectDetails.TotalCost">$</span>{{ projectDetails.TotalCost }}</p>
+                      <!-- <p class="projectRevenueText text-small"><span class="priceDown"></span><span style="font-size: 12px;"></span><span style="font-size: 12px;padding-left: 5px;"></span></p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="revenueCalc">
+            <div class="card mb-4 ">
+              <div class="card d-flex flex-row">
+                <a href="javascript:;">
+                  <!-- <img alt="Profile Picture" src="/assets/img/profiles/l-1.jpg" /> -->
+                  <img alt="Profile" src="/assets/img/pricing/Expenses.png"
+                    class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                </a>
+                <div class=" d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                    <div class="min-width-zero">
+                      <a href="javascript:;">
+                        <p class="projectRevenue mb-1 truncate">Expenses</p>
+                      </a>
+                      <p class="projectRevenueText text-small"><span *ngIf="projectDetails.TotalExpenseValue">$</span>{{ projectDetails.TotalExpenseValue }}</p>
+                      <!-- <p class="projectRevenueText text-small"><span class="priceUp"></span><span style="font-size: 12px;"></span><span style="font-size: 12px;padding-left: 5px;"></span></p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="revenueCalc">
+            <div class="card mb-4 ">
+              <div class="card d-flex flex-row">
+                <a href="javascript:;">
+                  <!-- <img alt="Profile Picture" src="/assets/img/profiles/l-1.jpg" /> -->
+                  <img alt="Profile" src="/assets/img/pricing/Profit.png"
+                    class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                </a>
+                <div class=" d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                    <div class="min-width-zero">
+                      <a href="javascript:;">
+                        <p class="projectRevenue mb-1 truncate">Profitability</p>
+                      </a>
+                      <p class="projectRevenueText text-small">{{ projectDetails.TotalProfitPercent }}<span *ngIf="projectDetails.TotalProfitPercent">%</span></p>
+                      <!-- <p class="projectRevenueText text-small"><span class="priceUp" ></span><span style="font-size: 12px;"> </span><span style="font-size: 12px;padding-left: 5px;"></span></p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="revenueCalc">
+            <div class="card mb-4 ">
+              <div class="card d-flex flex-row">
+                <a href="javascript:;">
+                  <!-- <img alt="Profile Picture" src="/assets/img/profiles/l-1.jpg" /> -->
+                  <img alt="Profile" src="/assets/img/pricing/Profit.png"
+                    class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center">
+                </a>
+                <div class=" d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+                    <div class="min-width-zero">
+                      <a href="javascript:;">
+                        <p class="projectRevenue mb-1 truncate">Profit</p>
+                      </a>
+                      <p class="projectRevenueText text-small"><span *ngIf="projectDetails.TotalProfitabilityCost">$</span>{{this.projectDetails.TotalProfitabilityCost}}</p>
+                      <!-- <p class="projectRevenueText text-small"><span class="priceUp" ></span><span style="font-size: 12px;"> </span><span style="font-size: 12px;padding-left: 5px;"></span></p> -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card mb-4 projectdetails">
+              <span class="headingDesign">Project Details</span>
+              <div class="card-body">
+                <div class="row">
+                  <div class="pricingDetailsList">
+                    
+                    <div class="form-group fieldsHeading">
+                      <label for="projectName">Project Name</label>
+                      <input [(ngModel)]="projectDetails.ProjectName" type="text" placeholder=""  class="form-control" id="projectName" aria-describedby="emailHelp"
+                        placeholder="Project Name">
+                    </div>
+                    <div class="form-group fieldsHeading">
+                      <label for="clientName">Client Name</label>
+                      <input [(ngModel)]="projectDetails.ClientName" type="text" class="form-control" id="clientName" aria-describedby="emailHelp"
+                        placeholder="Client Name">
+                    </div>
+                    <div class="form-group fieldsHeading">
+                        <label for="inputCity">{{ 'forms.location' | translate }}</label>
+                        <select [(ngModel)]="projectDetails.Location" id="country" class="form-control">
+                          <option selected>{{ 'input-groups.choose' | translate }}</option>
+                          <option *ngFor="let country of countryList" [value]="country.name">
+                            {{country.name}}
+                          </option>
+                        </select>
+                    </div>
+                    <div class="form-group fieldsHeading">
+                      <label for="stage">Stage</label>
+                          <select [(ngModel)]="projectDetails.Stage" id="stage" class="form-control">
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let stage of stages" [value]="stage.name">
+                              {{stage.name}}
+                            </option>
+                          </select>
+                     </div>                 
+                    </div>
+                <div class="pricingDetailsList">
+                  <div class="form-group fieldsHeading">
+                    <label for="startDate">Start Date</label>
+                    <input [(ngModel)]="projectDetails.StartDate" type="date" [min]="minDate" class="form-control" id="startDate" aria-describedby="emailHelp"
+                      placeholder="Start Date">
+                  <div *ngIf="projectDetails.StartDate==''" class="invalid-tooltip">Start Date is required</div>
+                  </div>
+                  <div class="form-group fieldsHeading">
+                    <label for="endDate">End Date</label>
+                    <input [(ngModel)]="projectDetails.EndDate" type="date" [min]="minDate" class="form-control" id="endDate" aria-describedby="emailHelp"
+                      placeholder="End Date">
+                      <div *ngIf="projectDetails.EndDate==''" class="invalid-tooltip">End Date is required</div>
+                  </div>
+                  <div class="form-group fieldsHeading"> 
+                      <label><span> Service Type</span></label>
+                      <ng-select [items]="serviceTypes" [multiple]="true" bindLabel="ServiceType" [closeOnSelect]="false"
+                        [(ngModel)]="projectDetails.SelectedServiceTypes">
+                      </ng-select>
+                  </div >
+                   <!-- <div class="form-group fieldsHeading">
+                    <label for="servicetype">{{ 'forms.servicetype' | translate }}</label>
+                    <div class="card">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="changeManagement" [(ngModel)]="projectDetails.ServiceType">
+                            <label class="form-check-label" for="inlineCheckbox1">Change Management</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="OrganistationDesign" [(ngModel)]="projectDetails.ServiceType">
+                            <label class="form-check-label" for="inlineCheckbox2">Organistation Design</label>
+                          </div>
+                          <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="StrategicChange" [(ngModel)]="projectDetails.ServiceType">
+                            <label class="form-check-label" for="inlineCheckbox3">Strategic Change</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox4" value="OrganistationDevelopment" [(ngModel)]="projectDetails.ServiceType">
+                              <label class="form-check-label" for="inlineCheckbox4">Organistation Development</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox5" value="HRTransformation" [(ngModel)]="projectDetails.ServiceType">
+                              <label class="form-check-label" for="inlineCheckbox5">HR Transformation</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="inlineCheckbox6" value="UX/ProcessImprovement" [(ngModel)]="projectDetails.ServiceType">
+                              <label class="form-check-label" for="inlineCheckbox6">UX/Process Improvement</label>
+                            </div>
+                                
+                    </div>
+                   </div> -->
+                </div>
+                <div class="pricingDetailsList">
+                  <div class="form-group fieldsHeading">
+                    <label for="salesLead">Sales Lead</label>
+                        <select [(ngModel)]="projectDetails.SalesLead" id="salesLead" class="form-control">
+                          <option selected>{{ 'input-groups.choose' | translate }}</option>
+                          <option *ngFor="let salesLead of consultants" [value]="salesLead.UserName">
+                            {{salesLead.UserName}}
+                          </option>
+                        </select>
+                   </div>
+                   <div class="form-group fieldsHeading">
+                    <label for="engagementLead">Engagement Lead</label>
+                        <select [(ngModel)]="projectDetails.EngagementLead" id="engagementLead" class="form-control">
+                          <option selected>{{ 'input-groups.choose' | translate }}</option>
+                          <option *ngFor="let engagementLead of consultants" [value]="engagementLead.UserName">
+                            {{engagementLead.UserName}}
+                          </option>
+                        </select>
+                   </div>
+                   <div class="form-group fieldsHeading">
+                    <label for="deliveryLead">Delivery Lead</label>
+                        <select [(ngModel)]="projectDetails.DeliveryLead" id="deliveryLead" class="form-control">
+                          <option selected>{{ 'input-groups.choose' | translate }}</option>
+                          <option *ngFor="let deliveryLead of consultants" [value]="deliveryLead.UserName">
+                            {{deliveryLead.UserName}}
+                          </option>
+                        </select>
+                   </div>
+                </div>
+                <!-- <div class="col-md-4">
+                  <table class="table revenue-dark">
+                    <thead>
+                      <tr style="background-color: darkviolet;">
+                        <th scope="col"></th>
+                        <th scope="col">Rack Rates</th>
+                        <th scope="col">Billable</th>
+                        <th scope="col">Cost</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th style="background-color: darkviolet;" scope="row">Consulting Fees</th>
+                        <td>{{totalNetWorth}}</td>
+                        <td>70,400$</td>
+                        <td>52,032$</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Expenses</th>
+                        <td>75,200$</td>
+                        <td>70,400$</td>
+                        <td>52,032$</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Subtotal</th>
+                        <td>75,200$</td>
+                        <td>70,400$</td>
+                        <td>52,032$</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">GST(10%)</th>
+                        <td>7,520$</td>
+                        <td>7,040$</td>
+                        <td>52,032$</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Total</th>
+                        <td>82,720$</td>
+                        <td>77,440$</td>
+                        <td>52,032$</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Profitability</th>
+                        <td>26$</td>
+                        <td>18,368</td>
+                        <td></td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Discount</th>
+                        <td>6.4%</td>
+                        <td>4,800</td>
+                        <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div> -->
+                </div>
+                
+               
+              </div>
+            </div>
+          </div>
+    </div>
+    <ngx-spinner bdColor="rgba(51, 51, 51, 1.4)" size="default" type="ball-spin-clockwise">  
+      <p style="color: white">Please Wait. </p>  
+    </ngx-spinner>
+    <div class="row">
+        <div class="col-12">        
+            <div class="card resourceestimates">
+              <span class="headingDesign">Consulting Resource Estimate</span>
+              <div class="card-body">
+                <div class="row" >
+                  <div class="col-12 mb-4 data-table-rows" >
+                    <ngx-datatable [rows]="priceQuote" [rowHeight]="50" [columns]="columns" [columnMode]="ColumnMode.flex" [limit]="itemsPerPage" [headerHeight]="30"
+                      [footerHeight]="100" #table [sorts]="[{ prop: 'title', dir: 'asc' }]" (select)="onSelect($event)"
+                      [selected]="selected" [selectionType]="SelectionType.checkbox">
+                      <ngx-datatable-column  name="ProjectRole" [flexGrow]="1.2">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Project Role</span>
+                        </ng-template>
+                        <ng-template  let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            required
+                            style="width: 100%;height: 38px;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'ProjectRole', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.ProjectRole"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column class="datatable-body-cell" name="Level" [flexGrow]="1.2">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Level</span>
+                        </ng-template>
+                        <ng-template      let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select id="Level" class="form-control" 
+                          [(ngModel)]="row.Level"
+                           (change)="updateAssetsValue($event, 'Level', rowIndex)"  >
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let rate of ratesList" [value]="rate.Level" >
+                              {{rate.Level}}
+                            </option>
+                          </select>
+                           
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column class="datatable-body-cell" name="Consultant" [flexGrow]="1.2">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Consultant</span>
+                        </ng-template>
+                        <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select id="consultant" 
+                          [(ngModel)]="row.Consultant"
+                          class="form-control" (blur)="updateAssetsValue($event, 'Consultant', rowIndex)">
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let consultant of consultants" [value]="consultant.UserName">
+                              {{consultant.UserName}}
+                            </option>
+                          </select>
+                           
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column class="datatable-body-cell" name="Billable" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Billable</span>
+                        </ng-template>
+                        <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select 
+                          [(ngModel)]="row.Billable"
+                          id="Billable" class="form-control" (blur)="updateAssetsValue($event, 'Billable', rowIndex)">
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let billable of billables" [value]="billable.name">
+                              {{billable.name}}
+                            </option>
+                          </select>
+                           
+                        </ng-template>
+                      </ngx-datatable-column>
+                      
+                      
+                      <ngx-datatable-column  name="RackRate" [flexGrow]="0.8">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Rack Rate
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                           {{ row.RackRate }}
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="CostRate" [flexGrow]="1.6">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Cost Rate
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                           {{row.CostRate}}
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      
+
+                      <ngx-datatable-column name="AppliedRate" [flexGrow]="0.9">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Applied Rate
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            (change)="applyDiscount($event, 'Level', rowIndex)"
+                            style="width: 100%;height: 38px;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'AppliedRate', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.AppliedRate"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="Discount" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Discount
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            {{row.Discount}}
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" class="datatable-body-cell" name="ContractType" [flexGrow]="1.2">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Contract Type</span>
+                        </ng-template>
+                        <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select id="ContractType" class="form-control" 
+                          [(ngModel)]="row.ContractType"
+                          (change)="ApplyContractType($event, 'ContractType', rowIndex)">
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let ctrctType of contractType" [value]="ctrctType.name">
+                              {{ctrctType.name}}
+                            </option>
+                          </select> 
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column *ngIf="editable" name="LevantCost" [flexGrow]="0.8">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Levant Cost
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;height: 38px;"
+                            type="text"
+                            [(ngModel)]="row.LevantCost"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column *ngIf="editable"  name="TotalCost" [flexGrow]="1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Total Cost
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;height: 38px;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'TotalCost', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.TotalCost"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="ClientRate"  [flexGrow]="0.8">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Client Rate
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;height: 38px;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'ClientRate', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.ClientRate"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="ContractPercent" *ngIf="editable" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Contract %
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'ContractPercent', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.ContractPercent"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="StartDate" [flexGrow]="1.1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Start Date
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;height: 38px;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'StartDate', rowIndex)"
+                            type="date"
+                            [min]="projectDetails.StartDate"
+                            [max]="projectDetails.EndDate"
+                            [(ngModel)]="row.StartDate"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column name="EndDate" [flexGrow]="1.1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          End Date
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;height: 38px;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'EndDate', rowIndex)"
+                            type="date"
+                            [min]="projectDetails.StartDate"
+                            [max]="projectDetails.EndDate"
+                            [(ngModel)]="row.EndDate"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <!-- <ngx-datatable-column name="Capacity" [flexGrow]="0.7">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Capacity
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;height: 38px;"
+                            (blur)="updateAssetsValue($event, 'Capacity', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.Capacity"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column> -->
+
+                      <ngx-datatable-column  name="TotalDays" [flexGrow]="0.8">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Total Days
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                           {{ row.WorkingDays }}
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column  name="RackRate" [flexGrow]="0.8">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Revenue
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                           {{ row.Subtotal }}
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="Subtotal" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Sub total
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'Subtotal', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.Subtotal"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="DeliveryCost" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Delivery Cost
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'DeliveryCost', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.DeliveryCost"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="CostToSell" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Cost to Sell
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'CostToSell', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.CostToSell"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="TotalDiscount" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Total Discount
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'TotalDiscount', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.TotalDiscount"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <ngx-datatable-column *ngIf="editable" name="GrossProfit" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Gross Profit
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateAssetsValue($event, 'GrossProfit', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.GrossProfit"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+
+                      <!-- <ngx-datatable-column name="networth" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                            Networth
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                          {{ row.networth }}
+                        </ng-template>
+                  
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="monthlyDifference" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                            Monthly Difference
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                          {{ row.monthlyDifference }}
+                        </ng-template>
+                    
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="fluctuation" [flexGrow]="1.4">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                            Fluctuation
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                          {{ row.fluctuation }}
+                        </ng-template>
+
+                      </ngx-datatable-column> -->
+                      
+                     
+                      <ngx-datatable-column name="" [flexGrow]="0.4">
+                        <ng-template  let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                            <i class="material-icons" style="color: red;" (click)="deleteRow(rowIndex)">delete</i>
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="" [flexGrow]="0.6">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                          <i  class="material-icons" style="color:green;margin-left:-15px" (click)="addNewRow() ">add_circle</i>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                            <i class="material-icons" style="color:green;margin-left:-15px" (click)="addNewRow() ">add_circle</i>
+                        </ng-template>
+                      </ngx-datatable-column>
+                    </ngx-datatable>           
+                  </div>
+              </div>
+              <div class="row">
+                <div class="col-12">        
+                    <div class="card resourceestimates">
+                      <span class="headingDesign">Contractor Resource Estimate</span>
+                      <div class="card-body">
+                        <div class="row" >
+                          <div class="col-12 mb-4 data-table-rows" >
+                            <ngx-datatable   [rows]="priceQuoteContractor" [rowHeight]="50" [columns]="columns" [columnMode]="ColumnMode.flex" [limit]="itemsPerPage" [headerHeight]="30"
+                              [footerHeight]="100" #table [sorts]="[{ prop: 'title', dir: 'asc' }]" (select)="onSelect($event)"
+                              [selected]="selected" [selectionType]="SelectionType.checkbox">
+                              
+                              <ngx-datatable-column  name="ProjectRole" [flexGrow]="1.2">
+                                <ng-template  let-column="column" ngx-datatable-header-template>
+                                    <span >Project Role</span>
+                                </ng-template>
+                                <ng-template  let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    required
+                                    style="width: 100%;height: 38px;"
+                                    autofocus
+                                    (blur)="updateContractorValue($event, 'ProjectRole', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.ProjectRole"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+                              <ngx-datatable-column class="datatable-body-cell" name="Level" [flexGrow]="1.2">
+                                <ng-template  let-column="column" ngx-datatable-header-template>
+                                    <span >Level</span>
+                                </ng-template>
+                                <ng-template      let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                  <select id="Level" class="form-control" 
+                                  [(ngModel)]="row.Level"
+                                   (change)="updateContractorValue($event, 'Level', rowIndex)"  >
+                                    <option selected>{{ 'input-groups.choose' | translate }}</option>
+                                    <option *ngFor="let rate of ratesList" [value]="rate.Level" >
+                                      {{rate.Level}}
+                                    </option>
+                                  </select>
+                                   
+                                </ng-template>
+                              </ngx-datatable-column>
+                              <ngx-datatable-column class="datatable-body-cell" name="Consultant" [flexGrow]="1.2">
+                                <ng-template  let-column="column" ngx-datatable-header-template>
+                                    <span >Contractor</span>
+                                </ng-template>
+                                <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                  <select id="consultant" 
+                                  (change)="updateContractorValue($event, 'Consultant', rowIndex)"
+                                  [(ngModel)]="row.Consultant"
+                                  class="form-control" (blur)="updateAssetsValue($event, 'Consultant', rowIndex)">
+                                    <option selected>{{ 'input-groups.choose' | translate }}</option>
+                                    <option *ngFor="let consultant of consultants" [value]="consultant.UserName">
+                                      {{consultant.UserName}}
+                                    </option>
+                                  </select>
+                                   
+                                </ng-template>
+                              </ngx-datatable-column>
+                              
+                              
+                              <ngx-datatable-column *ngIf="editable"  name="RackRate" [flexGrow]="1.6">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Rack Rate
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                   {{ row.RackRate }}
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column *ngIf="editable" name="CostRate" [flexGrow]="1.6">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Cost Rate
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                   {{row.CostRate}}
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column *ngIf="editable" class="datatable-body-cell" name="Billable" [flexGrow]="1">
+                                <ng-template  let-column="column" ngx-datatable-header-template>
+                                    <span >Billable</span>
+                                </ng-template>
+                                <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                  <select 
+                                  [(ngModel)]="row.Billable"
+                                  id="Billable" class="form-control" (blur)="updateAssetsValue($event, 'Billable', rowIndex)">
+                                    <option selected>{{ 'input-groups.choose' | translate }}</option>
+                                    <option *ngFor="let billable of billables" [value]="billable.name">
+                                      {{billable.name}}
+                                    </option>
+                                  </select>
+                                   
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column name="AppliedRate" *ngIf="editable" [flexGrow]="0.9">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Applied Rate
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    (change)="applyDiscount($event, 'Level', rowIndex)"
+                                    style="width: 100%;height: 38px;"
+                                    autofocus
+                                    (blur)="updateContractorValue($event, 'AppliedRate', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.AppliedRate"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column *ngIf="editable" name="Discount" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Discount
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    {{row.Discount}}
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column class="datatable-body-cell" name="ContractType" [flexGrow]="1">
+                                <ng-template  let-column="column" ngx-datatable-header-template>
+                                    <span >Contract Type</span>
+                                </ng-template>
+                                <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                  <select id="ContractType" class="form-control" 
+                                  [(ngModel)]="row.ContractType"
+                                  (change)="updateContractorValue($event, 'ContractType', rowIndex)">
+                                    <option selected>{{ 'input-groups.choose' | translate }}</option>
+                                    <option *ngFor="let ctrctType of contractType" [value]="ctrctType.name">
+                                      {{ctrctType.name}}
+                                    </option>
+                                  </select> 
+                                </ng-template>
+                              </ngx-datatable-column>
+                              <ngx-datatable-column name="LevantCost" [flexGrow]="0.8">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Levant Cost
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;height: 38px;"
+                                    (change)="updateContractorValue($event, 'LevantCost', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.LevantCost"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+                              <ngx-datatable-column name="TotalCost" [flexGrow]="0.8">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Total Cost
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    {{row.TotalCost}}
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column name="ClientRate"  [flexGrow]="0.8">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Client Rate
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;height: 38px;"
+                                    autofocus
+                                    (blur)="updateContractorValue($event, 'ClientRate', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.ClientRate"
+                                    type="number"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column name="ContractPercent" *ngIf="editable" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Contract %
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;"
+                                    autofocus
+                                    (blur)="updateContractorValue($event, 'ContractPercent', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.ContractPercent"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column name="StartDate" [flexGrow]="1.1">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Start Date
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;height: 38px;"
+                                    autofocus
+                                    (blur)="updateContractorValue($event, 'StartDate', rowIndex)"
+                                    type="date"
+                                    [min]="projectDetails.StartDate"
+                                    [max]="projectDetails.EndDate"
+                                    [(ngModel)]="row.StartDate"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column name="EndDate" [flexGrow]="1.1">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  End Date
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;height: 38px;"
+                                    autofocus
+                                    (blur)="updateContractorValue($event, 'EndDate', rowIndex)"
+                                    type="date"
+                                    [min]="projectDetails.StartDate"
+                                    [max]="projectDetails.EndDate"
+                                    [(ngModel)]="row.EndDate"
+                                    [value]="value"
+                                    
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <!-- <ngx-datatable-column name="Capacity" [flexGrow]="0.7">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Capacity
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;height: 38px;"
+                                    (blur)="updateContractorValue($event, 'Capacity', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.Capacity"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column> -->
+
+                              <ngx-datatable-column  name="TotalDays" [flexGrow]="0.7">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Total Days
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                   {{ row.WorkingDays }}
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column  name="RackRate" [flexGrow]="0.6">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Revenue
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                   {{ row.Subtotal }}
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+
+                              
+        
+                              <ngx-datatable-column *ngIf="editable" name="Subtotal" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Sub total
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;"
+                                    autofocus
+                                    (blur)="updateAssetsValue($event, 'Subtotal', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.Subtotal"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column *ngIf="editable" name="DeliveryCost" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Delivery Cost
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;"
+                                    autofocus
+                                    (blur)="updateAssetsValue($event, 'DeliveryCost', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.DeliveryCost"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column *ngIf="editable" name="CostToSell" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Cost to Sell
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;"
+                                    autofocus
+                                    (blur)="updateAssetsValue($event, 'CostToSell', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.CostToSell"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column *ngIf="editable" name="TotalDiscount" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Total Discount
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;"
+                                    autofocus
+                                    (blur)="updateAssetsValue($event, 'TotalDiscount', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.TotalDiscount"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <ngx-datatable-column *ngIf="editable" name="GrossProfit" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                  Gross Profit
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                                    <input
+                                    style="width: 100%;"
+                                    autofocus
+                                    (blur)="updateAssetsValue($event, 'GrossProfit', rowIndex)"
+                                    type="text"
+                                    [(ngModel)]="row.GrossProfit"
+                                    [value]="value"
+                                  />
+                                </ng-template>
+                              </ngx-datatable-column>
+        
+                              <!-- <ngx-datatable-column name="networth" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                    Networth
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                  {{ row.networth }}
+                                </ng-template>
+                          
+                              </ngx-datatable-column>
+                              <ngx-datatable-column name="monthlyDifference" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                    Monthly Difference
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                  {{ row.monthlyDifference }}
+                                </ng-template>
+                            
+                              </ngx-datatable-column>
+                              <ngx-datatable-column name="fluctuation" [flexGrow]="1.4">
+                                <ng-template let-column="column" ngx-datatable-header-template>
+                                    Fluctuation
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+                                  {{ row.fluctuation }}
+                                </ng-template>
+        
+                              </ngx-datatable-column> -->
+                              
+                             
+                              <ngx-datatable-column name="" [flexGrow]="0.4">
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                                    <i class="material-icons" style="color: red;" (click)="deleteRowContractor(rowIndex)">delete</i>
+                                </ng-template>
+                              </ngx-datatable-column>
+                              <ngx-datatable-column name="" [flexGrow]="0.6">
+                                <ng-template   let-column="column" ngx-datatable-header-template>
+                                  <i  class="material-icons" style="color:green;margin-left:-15px" (click)="addNewRowContractor() ">add_circle</i>
+                                </ng-template>
+                                <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                                    <i class="material-icons" style="color:green;margin-left:-15px" (click)="addNewRowContractor() ">add_circle</i>
+                                </ng-template>
+                              </ngx-datatable-column>
+                            </ngx-datatable>           
+                          </div>
+                      </div>
+              <div class="row" >
+                <span class="headingDesign" style="padding-bottom: 50px">Expense Estimate</span>
+                <div class="col-12 mb-4 data-table-rows" >
+                  
+                  <ngx-datatable  style="width: 1300px !important;"  [rows]="expenseQuote" [rowHeight]="50" [columns]="expensecolumns" [columnMode]="ColumnMode.flex" [limit]="itemsPerPage" [headerHeight]="30"
+                      [footerHeight]="100" #table [sorts]="[{ prop: 'title', dir: 'asc' }]" (select)="onSelect($event)"
+                      [selected]="selected" [selectionType]="SelectionType.checkbox">
+                      <ngx-datatable-column class="datatable-body-cell" name="ExpenseType" [flexGrow]="1.4">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Expense Type</span>
+                        </ng-template>
+                        
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select id="Level" class="form-control" 
+                          [(ngModel)]="row.ExpenseType"
+                           (change)="updateExpense($event, 'ExpenseType', rowIndex)"  >
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let expense of expenseList" [value]="expense.ExpenseType" >
+                              {{expense.ExpenseType}}
+                            </option>
+                          </select>                          
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="Description" [flexGrow]="2">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Description
+                        </ng-template>
+                       
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateExpense($event, 'Description', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.Description"
+                          />
+                          <!-- {{ row.Description }} -->
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="Number" [flexGrow]="1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          No. Units
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateExpense($event, 'Number', rowIndex)"
+                            type="text"
+                            [value]="value"
+                            [(ngModel)]="row.Number"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="UnitCost" [flexGrow]="1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Unit Cost
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateExpense($event, 'UnitCost', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.UnitCost"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="Billable" [flexGrow]="1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Billable(%)
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;"
+                            autofocus
+                            (blur)="updateExpense($event, 'Billable', rowIndex)"
+                            type="text"
+                            [(ngModel)]="row.Billable"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="LevantCost" [flexGrow]="1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Levant Cost
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex"  ngx-datatable-cell-template>
+                          {{ (row.UnitCost * row.Number) - +(row.UnitCost * row.Number * row.Billable)/100 }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="ClientCost" [flexGrow]="1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Client Cost
+                        </ng-template>
+                        <ng-template autofocus
+                         let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          {{ (row.UnitCost * row.Number * row.Billable)/100 }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="Subtotal" [flexGrow]="1">
+                        <ng-template let-column="column" ngx-datatable-header-template>
+                          Subtotal
+                        </ng-template>
+                        <ng-template let-row="row"  let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                      
+                          {{ (row.UnitCost * row.Number) - (+row.UnitCost * row.Number * row.Billable)/100 + (+row.UnitCost * row.Number * row.Billable/100) }}
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="" [flexGrow]="0.4">
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                            <i class="material-icons" style="color: red;" (click)="deleteExpenseRow(rowIndex)">delete</i>
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="" [flexGrow]="0.6">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                          <i class="material-icons" style="color:green;margin-left:-15px" (click)="addNewExpenseRow() ">add_circle</i>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+        
+                            <i class="material-icons" style="color:green;margin-left:-15px" (click)="addNewExpenseRow() ">add_circle</i>
+                        </ng-template>
+                      </ngx-datatable-column>
+                     
+                    </ngx-datatable>
+                </div>            
+            </div>
+            <div style="color: red;font-weight: bold;font-size: large;" *ngFor="let message of validationFailedMessages">{{ message }}</div>
+
+            <i class="material-icons"   style="margin-left:-20px !important;color:green;font-size: xxx-large" (click)="savePricingDetails()">save</i>
+         
+
+           
+          </div>
+    </div>
+    <div class="row">
+      <span class="headingDesign">Pricing Table</span>
+    </div>
+    <div class="row" style="margin-top: 2%;">
+      
+      <div class="col-6 projectRevenue mb-1 truncate">
+        <div class="card mb-12" style="height: 700px;">
+                  <table class="table revenue-dark">
+                    <thead>
+                      <tr style="background-color: darkviolet;">
+                        <th scope="col"></th>
+                        <th scope="col">Billable</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th style="background-color: darkviolet;" scope="row">Total Revenue</th>
+                        <td>${{projectDetails.TotalRevenue}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Gst</th>
+                        <td>${{projectDetails.TotalRevenue*0.1}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Fees Subtotal</th>
+                        <td>${{FeesWithSubtotal}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Client Expense</th>
+                        <td>${{TotalClientCost}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Expense Subtotal</th>
+                        <td>${{TotalClientCost}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Total Fees & Expenses</th>
+                        <td>${{TotalFeesExpenses}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Cost to Deliver</th>
+                        <td>${{TotalDeliveryCost}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Cost to Sell</th>
+                        <td>${{TotalCostToSell}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Levant Expense</th>
+                        <td>${{TotalLevantCost}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Cost Subtotal</th>
+                        <td>${{projectDetails.TotalCost}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Profit</th>
+                        <td>${{projectDetails.TotalProfitabilityCost}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Profit(%)</th>
+                        <td>{{projectDetails.TotalProfitPercent}}<span *ngIf="projectDetails.TotalProfitPercent">%</span></td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Discount(Usd)</th>
+                        <td>{{TotalProfitPercent}}</td>
+                      </tr>
+                      <tr>
+                        <th style="background-color: darkviolet;"  scope="row">Discount(%)</th>
+                        <td>{{TotalProfitPercent}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+        </div>
+      </div>
+      
+      
+    </div>
+   
+
+</div>
+
+
+

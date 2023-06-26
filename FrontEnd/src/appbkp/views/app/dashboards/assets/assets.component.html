@@ -1,0 +1,294 @@
+<!-- <div>
+    <ngx-datatable
+      #mydatatable
+      class="material"
+      [headerHeight]="20"
+      [limit]="5"
+      [columnMode]="ColumnMode.flex"
+      [footerHeight]="50"
+      rowHeight="auto"
+      [rows]="rows"
+
+    >
+      <ngx-datatable-column name="Name" [flexGrow]="1.5">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-value="value" let-row="row">
+          <input
+            autofocus
+            (blur)="updateValue($event, 'name', rowIndex)"
+            type="text"
+            [value]="value"
+          />
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Gender">
+        <ng-template ngx-datatable-cell-template let-rowIndex="rowIndex" let-row="row" let-value="value">
+          <span
+            title="Double click to edit"
+            (dblclick)="editing[rowIndex + '-gender'] = true"
+            *ngIf="!editing[rowIndex + '-gender']"
+          >
+            {{ value }}
+          </span>
+          <select
+            *ngIf="editing[rowIndex + '-gender']"
+            (blur)="editing[rowIndex + '-gender'] = false"
+            (change)="updateValue($event, 'gender', rowIndex)"
+            [value]="value"
+          >
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </ng-template>
+      </ngx-datatable-column>
+      <ngx-datatable-column name="Age">
+        <ng-template ngx-datatable-cell-template let-value="value">
+          {{ value }}
+        </ng-template>
+      </ngx-datatable-column>
+    </ngx-datatable>
+    <button type="button" type="button" (click)="saveData()">Save Data</button>
+  </div> -->
+
+  <button type="button" type="button" (click)="saveData()">Save Data</button>
+  <!-- <button style="background-image: url(../../../../../assets/logos/AddIcon.PNG);" type="button" type="button" (click)="addNewRow()">Add Row</button> -->
+  
+  <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+  </ngx-spinner>
+  
+  <div class="row">
+      <div class="col-12 mb-4 data-table-rows">
+        <ngx-datatable [rows]="assets" [columns]="columns" [columnMode]="ColumnMode.flex" [limit]="itemsPerPage" [headerHeight]="20"
+          [footerHeight]="100" #table [sorts]="[{ prop: 'title', dir: 'asc' }]" (select)="onSelect($event)"
+          [selected]="selected" [selectionType]="SelectionType.checkbox">
+          <ngx-datatable-column  name="Month" [flexGrow]="0.8">
+            <ng-template  let-column="column" ngx-datatable-header-template>
+                <span >Month</span>
+            </ng-template>
+            <ng-template  let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                required
+                style="width: 100%;background-color: #29b529;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'month', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="bankAccount" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Bankaccount
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: #29b529;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'bankAccount', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="stocksEtf" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Stocks / ETF
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: #29b529;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'stocksEtf', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="crypto" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Crypto
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: #29b529;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'crypto', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="preciousMetals" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Precious Metals
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: #29b529;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'preciousMetals', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="realState" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Real Estate
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: #29b529;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'realState', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="otherAssets" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Others
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: #29b529;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'otherAssets', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="loans" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Loans
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: orange;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'loans', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="mortgage" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+              Mortgage
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: orange;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'mortgage', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="creditCards" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Credit cards
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: orange;color: black;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'creditCards', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="otherLiablities" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Others
+            </ng-template>
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: orange;color: black;"          
+                autofocus
+                (blur)="updateAssetsValue($event, 'otherLiablities', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="networth" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Networth
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              {{ row.networth }}
+            </ng-template>
+            <!-- <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: skyblue;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'networth', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template> -->
+          </ngx-datatable-column>
+          <ngx-datatable-column name="monthlyDifference" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Monthly Difference
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              {{ row.monthlyDifference }}
+            </ng-template>
+            <!-- <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                <input
+                style="width: 100%;background-color: skyblue;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'monthlyDifference', rowIndex)"
+                type="text"
+                [value]="value"
+              />
+            </ng-template> -->
+          </ngx-datatable-column>
+          <ngx-datatable-column name="fluctuation" [flexGrow]="0.8">
+            <ng-template let-column="column" ngx-datatable-header-template>
+                Fluctuation
+            </ng-template>
+            <ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+              {{ row.fluctuation }}
+            </ng-template>
+            <!-- <ng-template let-row="row" let-value="value" let-rowIndex="fluctuation" ngx-datatable-cell-template>
+                <input
+                style="width: 80%;background-color: skyblue;"
+                autofocus
+                (blur)="updateAssetsValue($event, 'fluctuation', rowIndex)"
+                type="text"
+                [value]="value" 
+              />
+            </ng-template> -->
+          </ngx-datatable-column>
+          <ngx-datatable-column name="" [flexGrow]="0.4">
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                <i class="material-icons" style="color: red;" (click)="deleteRow(rowIndex)">delete</i>
+            </ng-template>
+          </ngx-datatable-column>
+          <ngx-datatable-column name="" [flexGrow]="0.6">
+            <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                <i class="material-icons" style="color:green" (click)="addNewRow()">add_circle</i>
+            </ng-template>
+          </ngx-datatable-column>
+          
+           
+        </ngx-datatable>
+        <i class="material-icons" style="color:green;font-size: xxx-large" (click)="saveData()">save</i>
+      </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-9 col-lg-12 mb-4">
+            <app-sales-chart-card ></app-sales-chart-card>
+        </div>
+        <div class="col-xl-3 col-lg-12 mb-4">
+            <app-doughnut-chart [shadow]="false" [options]="chartDataConfig.doughnutChartOptions"
+            [data]="doughnutChartData"></app-doughnut-chart>       
+      </div>
+  </div>

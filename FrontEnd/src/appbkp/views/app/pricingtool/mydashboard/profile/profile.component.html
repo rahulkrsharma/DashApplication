@@ -1,0 +1,285 @@
+<div class="row">
+  <div class="col-lg-12">
+  <div class="card d-flex flex-row mb-4">
+    <div>
+      <input type="file" (change)="onFileSelected($event)" alt="Profile"  accept="image/*" />
+      <div *ngIf="!this.userDetails.ProfileImage">
+        <img type="file" accept="image/*" src="/assets/img/profiles/l-1.jpg" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center" alt="Preview" />
+      </div>
+      <div *ngIf="this.userDetails.ProfileImage">
+        <img type="file" accept="image/*" [src]="this.userDetails.ProfileImage" class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center" alt="Preview" />
+      </div>
+    </div>
+      
+      <!-- <img id="fileInput" type="file" (change)="onSelectFile($event)"  alt="Profile" src="/assets/img/profiles/l-1.jpg"
+        class="img-thumbnail border-0 rounded-circle m-4 list-thumbnail align-self-center"> -->
+    
+    <div class=" d-flex flex-grow-1 min-width-zero">
+      <div
+        class="card-body pl-0 align-self-center d-flex flex-column flex-lg-row justify-content-between min-width-zero">
+        <div class="min-width-zero">
+          <a routerLink="./">
+            <p class="list-item-heading mb-1 truncate">{{userDetails.displayName}}</p>
+          </a>
+          <p class="mb-2 text-muted text-small">{{userDetails.Level}}</p>
+          <!-- <button type="button" class="btn btn-xs btn-outline-primary ">Edit</button>
+          <button type="button" class="btn btn-xs btn-outline-primary ">Save</button> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row">
+ 
+<div class="col-lg-8">
+<div class="card mb-4">
+    <div class="card-body">
+        <div class="form-row">
+            <div class="col-md-4">
+                <div class="form-row">
+                    <div class="form-group col-md-10 fieldsHeading">
+                        <label for="name">Name</label>
+                        <input [(ngModel)]="userDetails.displayName" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                          placeholder="Name">
+                    </div>
+                </div>
+               <div class="form-row" style="margin-top: 6%">
+                <div class="col-md-10 fieldsHeading">
+                  <label for="name">Email Id</label>
+                  <input [(ngModel)]="userDetails.email" name="something" type="email" class="form-control" id="name" aria-describedby="emailHelp"
+                    placeholder="Email Id">
+                    </div>
+                </div>
+                <div class="form-row" style="margin-top: 6%">
+                    <div class="col-md-10 fieldsHeading">
+                      <label for="mobileno">Mobile No.</label>
+                      <input [(ngModel)]="userDetails.MobileNo" name="something" type="text" class="form-control" id="mobileno" aria-describedby="emailHelp"
+                        placeholder="Mobile No.">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-row">
+                <div class="col-md-10 fieldsHeading">
+                    <label for="startDate">Start Date</label>
+                      <input [(ngModel)]="userDetails.UserRegDate" name="something"  type="date" class="form-control" id="startDate" aria-describedby="emailHelp"
+                        placeholder="Start Date" readonly="readonly"> 
+                </div>
+              </div> 
+              <div class="form-row">
+                <div class="col-md-10 fieldsHeading" style="margin-top: 6%">
+                  <label><span> Areas of Expertise</span></label>
+                  <ng-select [items]="serviceTypes" [multiple]="true" name="something" bindLabel="ServiceType" [closeOnSelect]="false"
+                    [(ngModel)]="userDetails.SelectedServiceTypes">
+                  </ng-select> 
+                </div>
+              </div>       
+              <div class="form-row">
+                <div class="col-md-10 fieldsHeading" style="margin-top: 6%">
+                  <label for="inputCity">{{ 'forms.location' | translate }}</label>
+                  <select [(ngModel)]="userDetails.Location" name="something" id="country" class="form-control">
+                    <option selected>{{ 'input-groups.choose' | translate }}</option>
+                    <option *ngFor="let country of countryList" [value]="country.name">
+                      {{country.name}}
+                    </option>
+                  </select> 
+                </div>
+              </div>                        
+            </div>
+            
+            <div class="col-md-4">
+              <div class="form-row">
+                <div class="col-md-10 fieldsHeading">
+                    <label for="level">Level</label>
+                    <select disabled="disabled" [(ngModel)]="userDetails.Level" id="level" name="something" class="form-control">
+                      <option selected>{{ 'input-groups.choose' | translate }}</option>
+                      <option *ngFor="let level of levels" [value]="level.name">
+                        {{level.name}}
+                      </option>
+                    </select>
+                </div>                              
+            </div>
+                <div class="form-row">
+                    <div class="col-md-10 fieldsHeading" style="margin-top: 6%">
+                        <label for="level">{{ 'forms.WorkSchedule' | translate }}</label>
+                        <select [(ngModel)]="userDetails.WorkSchedule" name="something" id="level" class="form-control">
+                          <option selected>{{ 'input-groups.choose' | translate }}</option>
+                          <option *ngFor="let schedule of WorkSchedule" [value]="schedule.name">
+                            {{schedule.name}}
+                          </option>
+                        </select>
+                    </div>                              
+                </div>
+                <div class="form-row">
+                    <div class="col-md-10 fieldsHeading" style="margin-top: 6%">
+                        <div class="form-group">
+                            <label for="level">{{ 'forms.ConsultingBio' | translate }}</label>
+                            <input type="file"
+                                   id="file"
+                                   (change)="handleFileInput($event.target.files)">
+                        </div>
+                    </div>                              
+                </div>                          
+            </div>
+            
+        </div>
+        <button type="button" (click)="saveProfileDetails()" class="btn btn-primary d-block mt-3">Save</button>
+    </div>
+</div>
+</div>
+<div class="col-lg-4">
+    <div class="card mb-4" style="height: 350px;">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12 projectRevenue mb-1 truncate">
+              <div class="card mb-4" style="height: 60px;">
+                <span class="headingDesign">Quarterly Utilisation Snapshot</span>
+              </div>
+            </div>  
+          </div>
+                <div class="form-row">
+                  <div class="col-md-4">
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-10 fieldsHeading">
+                            <label for="name">Prev Quarter (%)</label>
+                            <input [(ngModel)]="quarterlyAllocation.previousQuarterPercentAllocation" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                            placeholder="Name" readonly="readonly">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                      <div class="form-group col-md-10 fieldsHeading">
+                          <label for="name">Workdays</label>
+                          <input [(ngModel)]="quarterlyAllocation.previousQuarterSum" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                            placeholder="Name" readonly="readonly">
+                      </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-10 fieldsHeading">
+                        <label for="name">Leaves</label>
+                        <input [(ngModel)]="quarterlyAllocation.previousQuarterLeaveSum" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                          placeholder="Name" readonly="readonly">
+                    </div>
+                </div>
+       
+                        <!-- <table>
+                            <tr>
+                              <td>Utilisation Snapshot</td>
+                            </tr>
+                            <tr>
+                              <td>Previous Quarter Utilisation - {{quarterlyAllocation.previousQuarterPercentAllocation}}</td>
+                              <td>Previous Quarter Total Working Days - {{quarterlyAllocation.previousQuarterSum}}</td>
+                              <td>Previous Quarter Total Leaves - {{quarterlyAllocation.previousQuarterLeaveSum}}</td>
+                            </tr>
+                            <tr>
+                              <td>Current Quarter Utilisation - {{quarterlyAllocation.currentQuarterPercentAllocation}}</td>
+                              <td>Current Quarter Total Working Days - {{quarterlyAllocation.currentQuarterSum}}</td>
+                              <td>Current Quarter Total Leaves - {{quarterlyAllocation.currentQuarterLeaveSum}}</td>
+                            </tr>
+                            <tr>
+                              <td>Next Quarter Utilisation - {{quarterlyAllocation.nextQuarterPercentAllocation}}</td>
+                              <td>Next Quarter Total Working Days - {{quarterlyAllocation.nextQuarterSum}}</td>
+                              <td>Next Quarter Total Leaves - {{quarterlyAllocation.nextQuarterLeaveSum}}</td>
+                            </tr>
+                          </table> -->
+     
+                </div> 
+                <div class="col-md-4">
+                  <div class="form-row">
+                      <div class="form-group col-md-10 fieldsHeading">
+                          <label for="name">Curr Quarter (%)</label>
+                          <input [(ngModel)]="quarterlyAllocation.currentQuarterPercentAllocation" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                          placeholder="Name" readonly="readonly">
+                      </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-10 fieldsHeading">
+                        <label for="name">Workdays</label>
+                        <input [(ngModel)]="quarterlyAllocation.currentQuarterSum" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                          placeholder="Name" readonly="readonly">
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-10 fieldsHeading">
+                      <label for="name">Leaves</label>
+                      <input [(ngModel)]="quarterlyAllocation.currentQuarterLeaveSum" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                        placeholder="Name" readonly="readonly">
+                  </div>
+              </div>
+     
+                      <!-- <table>
+                          <tr>
+                            <td>Utilisation Snapshot</td>
+                          </tr>
+                          <tr>
+                            <td>Previous Quarter Utilisation - {{quarterlyAllocation.previousQuarterPercentAllocation}}</td>
+                            <td>Previous Quarter Total Working Days - {{quarterlyAllocation.previousQuarterSum}}</td>
+                            <td>Previous Quarter Total Leaves - {{quarterlyAllocation.previousQuarterLeaveSum}}</td>
+                          </tr>
+                          <tr>
+                            <td>Current Quarter Utilisation - {{quarterlyAllocation.currentQuarterPercentAllocation}}</td>
+                            <td>Current Quarter Total Working Days - {{quarterlyAllocation.currentQuarterSum}}</td>
+                            <td>Current Quarter Total Leaves - {{quarterlyAllocation.currentQuarterLeaveSum}}</td>
+                          </tr>
+                          <tr>
+                            <td>Next Quarter Utilisation - {{quarterlyAllocation.nextQuarterPercentAllocation}}</td>
+                            <td>Next Quarter Total Working Days - {{quarterlyAllocation.nextQuarterSum}}</td>
+                            <td>Next Quarter Total Leaves - {{quarterlyAllocation.nextQuarterLeaveSum}}</td>
+                          </tr>
+                        </table> -->
+   
+              </div> 
+              <div class="col-md-4">
+                <div class="form-row">
+                    <div class="form-group col-md-10 fieldsHeading">
+                        <label for="name">Next Quarter (%)</label>
+                        <input [(ngModel)]="quarterlyAllocation.nextQuarterPercentAllocation" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                          placeholder="Name" readonly="readonly">
+                    </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-10 fieldsHeading">
+                      <label for="name">Workdays</label>
+                      <input [(ngModel)]="quarterlyAllocation.nextQuarterSum" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                        placeholder="Name" readonly="readonly">
+                  </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-10 fieldsHeading">
+                    <label for="name">Leaves</label>
+                    <input [(ngModel)]="quarterlyAllocation.nextQuarterSum" name="something" type="text" class="form-control" id="name" aria-describedby="emailHelp"
+                      placeholder="Name" readonly="readonly">
+                </div>
+            </div>
+   
+                    <!-- <table>
+                        <tr>
+                          <td>Utilisation Snapshot</td>
+                        </tr>
+                        <tr>
+                          <td>Previous Quarter Utilisation - {{quarterlyAllocation.previousQuarterPercentAllocation}}</td>
+                          <td>Previous Quarter Total Working Days - {{quarterlyAllocation.previousQuarterSum}}</td>
+                          <td>Previous Quarter Total Leaves - {{quarterlyAllocation.previousQuarterLeaveSum}}</td>
+                        </tr>
+                        <tr>
+                          <td>Current Quarter Utilisation - {{quarterlyAllocation.currentQuarterPercentAllocation}}</td>
+                          <td>Current Quarter Total Working Days - {{quarterlyAllocation.currentQuarterSum}}</td>
+                          <td>Current Quarter Total Leaves - {{quarterlyAllocation.currentQuarterLeaveSum}}</td>
+                        </tr>
+                        <tr>
+                          <td>Next Quarter Utilisation - {{quarterlyAllocation.nextQuarterPercentAllocation}}</td>
+                          <td>Next Quarter Total Working Days - {{quarterlyAllocation.nextQuarterSum}}</td>
+                          <td>Next Quarter Total Leaves - {{quarterlyAllocation.nextQuarterLeaveSum}}</td>
+                        </tr>
+                      </table> -->
+ 
+            </div>                  
+            </div>
+        </div>
+</div>
+</div>
+
+
+

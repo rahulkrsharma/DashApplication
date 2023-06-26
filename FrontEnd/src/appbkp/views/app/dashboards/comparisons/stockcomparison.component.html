@@ -1,0 +1,170 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+</ngx-spinner>
+<div class="row">
+    <div class="col-xl-3 col-lg-12 mb-4">
+       
+    </div>
+    <div class="col-xl-3 col-lg-12 mb-4">
+        <div class="input-group" style="width: 80%;height: 35px!important;">
+            <input type="text" [(ngModel)]="FirstCompany" style="height: 30px;" class="form-control" placeholder="Search company">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" style="height: 30px;width: 15px;background-color: purple;" type="button" (click)="search(FirstCompany,1)">
+                <span class="search-icon"><i class="simple-icon-magnifier"></i></span>
+              </button>
+            </div>
+          </div>
+        <!-- <div  style="border: initial!important;background: white!important;" class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top"><input placeholder="Search" (onclick)="search()"  class="form-control"></div>        -->
+  </div>
+  <div class="col-xl-3 col-lg-12 mb-4">
+    <div class="input-group" style="width: 80%;height: 35px!important;margin-left: -30%;">
+        <input type="text" [(ngModel)]="SecondCompany" style="height: 30px;" class="form-control" placeholder="Search company">
+        <div class="input-group-append">
+          <button class="btn btn-secondary" style="height: 30px;width: 15px;background-color: purple;" type="button" (click)="search(SecondCompany,2)">
+            <span class="search-icon"><i class="simple-icon-magnifier"></i></span>
+          </button>
+        </div>
+      </div>
+    <!-- <div  style="border: initial!important;background: white!important;" class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top"><input placeholder="Search" (onclick)="search()"  class="form-control"></div>        -->
+    </div>
+    <div class="col-xl-3 col-lg-12 mb-4">
+        <div class="input-group" style="width: 80%;height: 35px!important;margin-left: -60%;">
+            <input type="text" [(ngModel)]="ThirdCompany" style="height: 30px;" class="form-control" placeholder="Search company">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" style="height: 30px;width: 15px;background-color: purple;" type="button" (click)="search(ThirdCompany,3)">
+                <span class="search-icon"><i class="simple-icon-magnifier"></i></span>
+              </button>
+            </div>
+          </div>
+        <!-- <div  style="border: initial!important;background: white!important;" class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top"><input placeholder="Search" (onclick)="search()"  class="form-control"></div>        -->
+  </div>
+</div>
+
+<section id="pricePlans">
+    <ul id="plans">
+        <li class="plan" style="width: 15%;">
+            <ul class="planContainer">
+                <li class="title"><h2>Name</h2></li>
+                <!-- <li class="price"><p>Score</p></li> -->
+                <li>
+                    <ul class="options">
+                        <li style="background-color:lightgrey">ISIN </li>
+                        <li style="height: 60px;">Score </li>
+                        <li style="background-color:lightgrey">Size </li>
+                        <li>Marcetcap </li>
+                        <li style="background-color:lightgrey">Industry </li>
+                        <li>Rol LY</li>
+                        <li style="background-color:lightgrey">EBIT LY </li>
+                        <li>Equity ratio </li>
+                        <li style="background-color:lightgrey">P/E 5Y </li>
+                        <li>P/E LY </li>
+                        <li style="background-color:lightgrey">Analysts</li>
+                        <li>Analysts rating</li>
+                        <li style="background-color:lightgrey">Benchmark </li>
+                        <li>6 Month </li>
+                        <li style="background-color:lightgrey">1 Year </li>
+                        <li>Avg. EPS </li>
+                        <li style="background-color:lightgrey">EPS Performance</li>
+                        <li style="height: 60px;">Last Dividend</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        
+        <li class="plan" *ngIf="FirstCompVisible">
+            <!-- <div  style=" margin-top: -15%;border: initial!important;background: white!important;" class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top"><input placeholder="Search" (onclick)="search()"  class="form-control"></div> -->
+            <ul class="planContainer">
+                <button class="close" type="button" (click)="featureHide(1)">x</button>
+                <li class="title"><h2>{{FirstCompanyStockData.StockName}}</h2></li>
+                <!-- <li class="price"><p>Score</p></li> -->
+                <li>
+                    <ul class="options">
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.ISIN}} </li>
+                        <li style="height: 60px;background-color: #a555a5;font-size: 25px;color: white;
+                        font-weight: 100;">{{FirstCompanyStockData.StockScore}}</li>
+                        <li style="background-color:lightgrey">Large </li>
+                        <li>{{FirstCompanyStockData.Marketcap}} USD </li>
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.Industry}} </li>
+                        <li>{{FirstCompanyStockData.KpiRolLy}}%</li>
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.KpiEBITLy}}% </li>
+                        <li>{{FirstCompanyStockData.KpiEquityRation}}%</li>
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.KpiPE5Y}}%  </li>
+                        <li>{{FirstCompanyStockData.KpiEBITLy}}</li>
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.KpiAnalyst}}</li>
+                        <li>{{FirstCompanyStockData.KpiAnalystRating}}</li>
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.KpiBenchmark}}</li>
+                        <li>{{FirstCompanyStockData.KpiPerf6Month}}</li>
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.KpiPerf1Year}}</li>
+                        <li>{{FirstCompanyStockData.KpiAvgEPS}} %</li>
+                        <li style="background-color:lightgrey">{{FirstCompanyStockData.KpiEPSPerf}}%</li>
+                        <li style="height: 60px;">{{FirstCompanyStockData.LastDividend}} USD</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li class="plan" *ngIf="SecondCompVisible" [style.marginLeft.px] ="!FirstCompVisible ? '232' : '0'">
+            <!-- <div style=" margin-top: -15%;border: initial!important;background: white!important;" class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top"><input placeholder="Search" class="form-control"></div> -->
+            <button class="close" type="button" (click)="featureHide(2)">x</button>
+            <ul class="planContainer" >
+                <li class="title"><h2>{{SecondCompanyStockData.StockName}}</h2></li>
+                <!-- <li class="price"><p>Score</p></li> -->
+                <li>
+                    <ul class="options">
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.ISIN}} </li>
+                        <li style="height: 60px;background-color: #a555a5;font-size: 25px;color: white;
+                        font-weight: 100;">{{SecondCompanyStockData.StockScore}}</li>
+                        <li style="background-color:lightgrey">Large </li>
+                        <li>{{SecondCompanyStockData.Marketcap}} USD </li>
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.Industry}} </li>
+                        <li>{{SecondCompanyStockData.KpiRolLy}}%</li>
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.KpiEBITLy}}% </li>
+                        <li>{{SecondCompanyStockData.KpiEquityRation}}%</li>
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.KpiPE5Y}}%  </li>
+                        <li>{{SecondCompanyStockData.KpiEBITLy}}</li>
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.KpiAnalyst}}</li>
+                        <li>{{SecondCompanyStockData.KpiAnalystRating}}</li>
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.KpiBenchmark}}</li>
+                        <li>{{SecondCompanyStockData.KpiPerf6Month}}</li>
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.KpiPerf1Year}}</li>
+                        <li>{{SecondCompanyStockData.KpiAvgEPS}} %</li>
+                        <li style="background-color:lightgrey">{{SecondCompanyStockData.KpiEPSPerf}}%</li>
+                        <li style="height: 60px;">{{SecondCompanyStockData.LastDividend}} USD</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+
+        <li class="plan" *ngIf="ThirdCompVisible" [style.marginLeft.px] ="!FirstCompVisible && !SecondCompVisible  ? '450' : checkMargin()">
+            <!-- <div style=" margin-top: -15%;border: initial!important;background: white!important;" class="search-sm d-inline-block float-md-left mr-1 mb-1 align-top"><input placeholder="Search" class="form-control"></div> -->
+            <button class="close" type="button" (click)="featureHide(3)">x</button>
+            <ul class="planContainer">
+                <li class="title"><h2>{{ThirdCompanyStockData.StockName}}</h2></li>
+                <!-- <li class="price"><p>Score</p></li> -->
+                <li>
+                    <ul class="options">
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.ISIN}} </li>
+                        <li style="height: 60px;background-color: #a555a5;font-size: 25px;color: white;
+                        font-weight: 100;">{{ThirdCompanyStockData.StockScore}}</li>
+                        <li style="background-color:lightgrey">Large </li>
+                        <li>{{ThirdCompanyStockData.Marketcap}} USD </li>
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.Industry}} </li>
+                        <li>{{ThirdCompanyStockData.KpiRolLy}}%</li>
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.KpiEBITLy}}% </li>
+                        <li>{{ThirdCompanyStockData.KpiEquityRation}}%</li>
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.KpiPE5Y}}%  </li>
+                        <li>{{ThirdCompanyStockData.KpiEBITLy}}</li>
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.KpiAnalyst}}</li>
+                        <li>{{ThirdCompanyStockData.KpiAnalystRating}}</li>
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.KpiBenchmark}}</li>
+                        <li>{{ThirdCompanyStockData.KpiPerf6Month}}</li>
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.KpiPerf1Year}}</li>
+                        <li>{{ThirdCompanyStockData.KpiAvgEPS}} %</li>
+                        <li style="background-color:lightgrey">{{ThirdCompanyStockData.KpiEPSPerf}}%</li>
+                        <li style="height: 60px;">{{ThirdCompanyStockData.LastDividend}} USD</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul> <!-- End ul#plans -->
+</section>

@@ -1,0 +1,58 @@
+table {
+    border-collapse: separate;
+    border-spacing: 0;
+  } 
+  .blue-background {
+    background-color: cyan;
+  }
+  
+  
+  .green-background {
+    background-color: green;
+  }
+  
+  .black-background {
+    background-color: black;
+  }
+
+  .data-exist{
+  background: palegoldenrod;
+  }
+  
+  .white-background{
+    background-color: white;
+  }
+
+  tr.spaced-row {
+    border-bottom: 1em solid transparent;
+  }
+
+  tr.spaced-row + tr {
+    margin-top: 1em;
+  }
+
+  
+
+  .stage-won {
+    background-color: red !important;
+  }
+
+  .stage-proposed{
+    background-color: violet !important;
+  }
+
+  .stage-qualified{
+    background-color: blue !important;
+  }
+
+  .stage-rest{
+    background-color: black !important;
+  }
+
+  .stage-leave{
+    background-color: aquamarine !important;
+  }
+
+  
+
+ 

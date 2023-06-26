@@ -1,0 +1,205 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+    <p style="color: white">Please Wait. </p>  
+  </ngx-spinner>
+<div class="col-12 list">
+    <table>
+        <tr *ngFor="let data of weeklyData; let i = index"  class="spaced-row">
+            <td *ngIf="data.RowSpan>0" [attr.rowspan]="data.RowSpan"
+                [class.white-background]="data.profileUrl !='Header'"
+                [class.black-background]="data.profileUrl =='Header'"
+                style="border: 1px solid black;">
+                <span style="font-weight: bolder;">{{data.consultant}}</span>
+                <a *ngIf="data.profileUrl !='' && data.profileUrl !='Header'" class="d-flex" href="javascript:;">
+                    <img (click)="openProfile(data.consultant)" [src]="data.profileUrl" [alt]="Unknown"
+                        class="list-thumbnail responsive border-0 card-img-left" />
+                </a>
+                <a *ngIf="data.profileUrl =='Header'" class="d-flex" href="javascript:;">
+                    <span
+                        style="align-self: center;font-size: initial;margin-left: 15px;width: 82%;font-weight: bold;color: white;">
+                        Resource </span>
+                </a>
+            </td>
+
+            <td [class.green-background]="data.Week1 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week1 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week1!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week1)" class="badge badge-pill badge-secondary"> {{data.Week1}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week2 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week2 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week2!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week2)"  class="badge badge-pill badge-secondary"> {{data.Week2}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week3 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week3 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week3!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week2)" class="badge badge-pill badge-secondary"> {{data.Week3}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week4 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week4 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week4!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week4)" class="badge badge-pill badge-secondary"> {{data.Week4}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week5 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week5 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week5!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week5)" class="badge badge-pill badge-secondary"> {{data.Week5}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week6 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week6 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week6!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week6)" class="badge badge-pill badge-secondary"> {{data.Week6}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week7 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week7 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week7!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week7)" class="badge badge-pill badge-secondary"> {{data.Week7}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week8 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week8 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week8!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week8)" class="badge badge-pill badge-secondary"> {{data.Week8}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week9 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week9 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week9!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week9)" class="badge badge-pill badge-secondary"> {{data.Week9}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week10 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week10 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week10!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week10)" class="badge badge-pill badge-secondary"> {{data.Week10}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week11 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week11 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week11!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week11)" class="badge badge-pill badge-secondary"> {{data.Week11}}</span>
+                </div>
+            </td>
+            <td [class.green-background]="data.Week12 === ''" [class.green-background]="data.Week12 === ''" [class.black-background]="data.profileUrl =='Header'">
+                <div *ngIf="data.profileUrl =='Header'" class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;color: white;">
+                    <span style="text-wrap:wrap;text-align: center;margin-top: 20%;"> {{data.Week12 }}</span>
+                </div>
+                <div class="w-5 w-sm-44"
+                    style="align-self: center;font-size: initial;margin-left: 15px;width: 100px;">
+                    <span *ngIf="data.Week12!='' && data.profileUrl !='Header'"
+                        style="text-wrap:wrap;text-align: center;margin-top: 20%;"
+                        [ngClass]="getStageClass(data.Week12)" class="badge badge-pill badge-secondary"> {{data.Week12}}</span>
+                </div>
+            </td>
+        </tr>
+        <!-- <tr>
+    <td>Raju Sharma</td>
+    <td>34</td>
+    <td>PCM</td>
+    <td>MCA</td>
+    <td>Hyderabad</td>
+    <td>646345345</td>
+    <td>534543545</td>
+</tr>
+<tr>
+    <td rowspan="2">Nidhi Sharma</td>
+    <td>23</td>
+    <td>MNW</td>
+    <td>MCA</td>
+    <td>Gurgaon</td>
+    <td>845645656</td>
+    <td>232323</td>
+</tr>
+<tr>
+    <td>26</td>
+    <td>MNW</td>
+    <td>EC</td>
+    <td>Delhi</td>
+    <td>8567576</td>
+    <td>534543545</td>
+</tr> -->
+    </table>
+    <!-- <table border="2">
+<tr *ngFor="let employee of employees; let i = index">
+  <td>{{ employee.name }}</td>
+  <td [attr.rowspan]="getRowSpan(employee)">{{ employee.age }}</td>
+  <td [attr.rowspan]="getRowSpan(employee)">{{ employee.department }}</td>
+  <td>{{ employee.salary }}</td>
+  <td>{{ employee.location }}</td>
+</tr>
+</table> -->
+
+</div>

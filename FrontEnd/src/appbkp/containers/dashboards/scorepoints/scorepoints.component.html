@@ -1,0 +1,88 @@
+<div class="card dashboard-link-list">
+    <div class="card-body">
+        <h5 class="card-title">{{ 'dashboards.scoreapi' | translate }}</h5>
+        <div class="d-flex flex-row">
+            <div class="w-40">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1" >
+                        Rol LY:              
+                    </li>
+                    <li class="mb-1" >
+                        EBIT LY:              
+                    </li>
+                    <li class="mb-1" >
+                        Equity ratio:              
+                    </li>
+                    <li class="mb-1" >
+                        P/E 5Y:              
+                    </li>
+                    <li class="mb-1" >
+                        P/E LY:              
+                    </li>
+                    <li class="mb-1" >
+                        Analysts:              
+                    </li>
+                    <li class="mb-1" >
+                        Analysts rating:              
+                    </li>
+                    <li class="mb-1" >
+                        Benchmark:              
+                    </li>
+                    <li class="mb-1" >
+                        Performance 6 Month:              
+                    </li>
+                    <li class="mb-1" >
+                        Performance 1 Year:              
+                    </li>
+                    <li class="mb-1" >
+                        Avg. EPS:              
+                    </li>
+                    <li class="mb-1" >
+                        EPS Performance:              
+                    </li>
+                    
+                </ul>
+            </div>
+            <div class="w-50">
+                <ul class="list-unstyled mb-0">
+                    <li class="mb-1" >
+                       {{singleStockInfo.ScoreRolLy}}   
+                    </li>
+                    <li class="mb-1" >
+                        {{singleStockInfo.ScoreEBITLy}}                    
+                     </li>
+                     <li class="mb-1" >
+                        {{singleStockInfo.ScoreEquityRation}}    
+                     </li>
+                      <li class="mb-1" >
+                        {{singleStockInfo.ScorePE5Y}}   
+                     </li>
+                     <li class="mb-1" >
+                         {{singleStockInfo.KpiPELY}}                   
+                      </li>
+                      <li class="mb-1" >
+                         {{singleStockInfo.ScoreAnalyst}}  
+                      </li>
+                      <li class="mb-1" >
+                          {{singleStockInfo.ScoreAnalystRating}}                   
+                       </li>
+                       <li class="mb-1" >
+                        {{singleStockInfo.ScoreBenchmark}}    
+                     </li>
+                     <li class="mb-1" >
+                         {{singleStockInfo.ScorePerf6Month}}                  
+                      </li>
+                      <li class="mb-1" >
+                         {{singleStockInfo.ScorePerf1Year}}    
+                      </li>
+                      <li class="mb-1" >
+                          {{singleStockInfo.ScoreAvgEPS}}                    
+                       </li>
+                       <li class="mb-1" >
+                        {{singleStockInfo.ScoreEPSPerf}}                   
+                     </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

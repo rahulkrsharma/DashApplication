@@ -1,0 +1,445 @@
+<div class="row">
+    <div class="col-xl-6 col-lg-12 mb-4">
+      <div class="card mb-6 table-heading">
+        <h2>Purchase Premium Plan</h2>
+      </div>
+      <br>
+      <br>
+        <div class="row" style="height: 150px;">
+          <div class="col-sm">
+            <div class="card flex flex-row mb-3" style="height: 70%;border-radius: 0.25rem!important;">
+              <div class="d-flex flex-grow-1 min-width-zero">
+                <div
+                  class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                  <span>12 Month Subscription</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card flex flex-row mb-3" style="height: 70%;border-radius: 0.25rem!important;background-color: #a555a5;">
+              <div class="d-flex flex-grow-1 min-width-zero">
+                <div
+                class="card-body align-self-center ">
+                <span style="color: white;font-size: 140%;">9.9 EUR / month</span>
+                <br>
+                <span style="color: white;font-size: 110%;margin-left: 20px;">Monthly Payment</span>
+                <br>
+                <br>
+                <button type="button" (click)="buyNow('9.9')" class="btn btn-primary btn-sm mb-1" style="border-radius: 0px;">BUY NOW</button>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row" style="height: 150px;">
+          <div class="col-sm">
+            <div class="card flex flex-row mb-3" style="height: 80%;border-radius: 0.25rem!important;">
+              <div class="d-flex flex-grow-1 min-width-zero">
+                <div
+                  class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                  <span>1 Month Subscription</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm">
+            <div class="card flex flex-row mb-3" style="height: 80%;border-radius: 0.25rem!important;background-color: #a555a5;">
+              <div class="d-flex flex-grow-1 min-width-zero">
+                <div
+                  class="card-body align-self-center ">
+                  <span style="color: white;font-size: 140%;">11.99 EUR / month</span>
+                <br>
+                <span style="color: white;font-size: 110%;margin-left: 20px;">One Time Payment</span>
+                <br>
+                <br>
+                <button type="button" (click)="buyNow('11.99')" class="btn btn-primary btn-sm mb-1" style="border-radius: 0px;">BUY NOW</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- <app-sales-chart-card></app-sales-chart-card> -->
+    </div>
+    <div class="col-xl-6 col-lg-12 mb-4">
+        <div class="row">
+            <!-- Larger screen layout -->
+            <div class="col-12 d-none d-md-block">
+              <div class="card mb-3 table-heading">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <!-- <p class="list-item-heading mb-0 truncate w-40 w-xs-100"></p> -->
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center" style="white-space: nowrap;color: black !important;
+                    font-size: 120%;margin-left: -10%;">Feature Comparison</p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center" style="white-space: nowrap;color: black !important;
+                    font-size: 120%;margin-right: -7%;">{{ 'pages.prices.basic' | translate }}</p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center" style="white-space: nowrap;color: black !important;
+                    font-size: 120%;">{{ 'pages.prices.premium' | translate }}</p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">{{ 'pages.prices.enterprise' | translate }}</p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-40 w-xs-100">
+                      {{ 'pages.prices.dashboard' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;"> 
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-40 w-xs-100">
+                      {{ 'pages.prices.privatepage' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-40 w-xs-100">
+                      {{ 'pages.prices.singlestock' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      5/day
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                     unlimited
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-40 w-xs-100">
+                      {{ 'pages.prices.comparison' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-40 w-xs-100">
+                      {{ 'pages.prices.assetoverview' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-40 w-xs-100">
+                      {{ 'pages.prices.darkmode' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-40 w-xs-100">
+                      {{ 'pages.prices.alertfunction' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+              <div class="card flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div
+                    class="card-body align-self-center d-flex flex-column flex-md-row justify-content-between min-width-zero align-items-md-center">
+                    <p class="list-item-heading mb-0 truncate w-50 w-xs-100">
+                      {{ 'pages.prices.futurecomponents' | translate }}
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                    </p>
+                    <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                    <!-- <p class="mb-0 text-primary w-20 w-xs-100 text-center">
+                      <i class="simple-icon-check"></i>
+                    </p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <!-- Smaller screen layout
+            <div class="col-12 d-block d-md-none">
+              <div class="card d-flex flex-row mb-3 table-heading">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body pl-0 pb-0">
+                    <p class="list-item-heading mb-0 text-primary">{{ 'pages.prices.twofactorauthentication' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.developer' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3" style="height: 5%;border-radius: 0.25rem!important;">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.team' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3 style="height: 5%;border-radius: 0.25rem!important;"">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.enterprise' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3 table-heading">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body pl-0 pb-0">
+                    <p class="list-item-heading mb-0 text-primary">{{ 'pages.prices.teampermissions' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.developer' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.team' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.enterprise' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3 table-heading">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body pl-0 pb-0">
+                    <p class="list-item-heading mb-0 text-primary">{{ 'pages.prices.245Support' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.developer' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.team' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.enterprise' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3 table-heading">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body pl-0 pb-0">
+                    <p class="list-item-heading mb-0 text-primary">{{ 'pages.prices.247Support' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.developer' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.team' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.enterprise' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3 table-heading">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body pl-0 pb-0">
+                    <p class="list-item-heading mb-0 text-primary">{{ 'pages.prices.useractionsauditlog' | translate }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.developer' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.team' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="card d-flex flex-row mb-3">
+                <div class="d-flex flex-grow-1 min-width-zero">
+                  <div class="card-body align-self-center d-flex flex-row">
+                    <p class="list-item-heading mb-0 truncate w-70">
+                      {{ 'pages.prices.enterprise' | translate }}
+                    </p>
+                    <p class="text-primary text-right mb-0 w-30 text-one">
+                      <i class="simple-icon-check"></i>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+           
+  </div> -->

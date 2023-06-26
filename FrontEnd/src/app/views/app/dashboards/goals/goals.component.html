@@ -1,0 +1,40 @@
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="default" type="ball-spin-clockwise">  
+  <p style="color: white">Please Wait. </p>  
+</ngx-spinner>
+<div class="card mb-4">
+    <div class="card-body">
+        <h5 class="card-title">{{title}}</h5>
+
+      <form (ngSubmit)="goalForm.form.valid && saveUserGoal()" #goalForm="ngForm">
+        <div class="form-group">
+            <label class="form-group has-float-label">
+            <input class="form-control" type="text" 
+            name="annualasset" [(ngModel)]="goals.userGoalAnnualAsset" #annualasset="ngModel" />
+            <span>Annual assets:</span>
+            </label>
+        </div>
+        <label class="form-group has-float-label">
+            <input class="form-control" type="text" 
+            name="longtermgoal" [(ngModel)]="goals.userGoalLongTerm" #longtermgoal="ngModel" />
+          <span>Long term goals:</span>
+        </label>
+        <label class="form-group has-float-label">
+            <input class="form-control" type="text" 
+            name="motivationalgoal" [(ngModel)]="goals.userGoalMotivation" #motivationalgoal="ngModel" />
+            <span>Motivational goals:</span>
+          </label>
+        <label class="form-group has-float-label">
+            <input class="form-control" type="text" 
+            name="savingsrate" [(ngModel)]="goals.userGoalSavingsRate" #savingsrate="ngModel" />
+        <span>Savings rate:</span>
+        </label>
+        <label class="form-group has-float-label">
+            <input class="form-control" type="text" 
+            name="savingsvolume" [(ngModel)]="goals.userGoalSavingsVolume" #savingsvolume="ngModel" />
+            <span>Savings volume p.a:</span>
+            </label>
+       
+        <button class="btn btn-primary" type="submit">Save data</button>
+      </form>
+    </div>
+  </div>

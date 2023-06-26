@@ -1,0 +1,106 @@
+.projectpricing-stats {
+    height: 100px;
+    }
+
+    .projectdetails {
+        height: 450px;
+        }
+  
+    .resourceestimates {
+        height: auto;
+        }
+
+    .projectRevenue {
+        font-size: 1.2rem;
+    font-weight: bold;
+    }
+
+    .projectRevenueText {
+        font-size: 1rem!important;
+        font-weight: bold;
+        margin-top: 20px
+    }
+
+    .priceDown {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid red;
+        font-size: 0;
+        line-height: 0;
+        float: left;
+      }
+
+      .priceUp {
+        width: 0;
+        height: 0;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 10px solid green;
+        font-size: 0;
+        line-height: 0;
+        float: left;
+        transform: rotate(-180deg)
+      }
+
+
+      .revenue-dark {
+        color: #fff!important;
+        background-color: #343a40;
+    }
+
+    .pricingDetailsList {
+        flex: 0 0 33%;
+        max-width: 33%;
+        padding-right: 15px;
+        padding-left: 15px;
+    }
+
+    .fieldsHeading{
+        font-weight: bolder;
+    }
+
+    .datatable-body-cell {
+        height: 50px !important;
+    }
+   
+    .mat-mdc-form-field + .mat-mdc-form-field {
+        margin-left: 8px;
+      }
+
+      .ngx-datatable-column {
+        width: fit-content;
+      }
+      
+
+      .headingDesign {
+        font-weight: bold;
+        font-size: large;
+        margin-left: 50px;
+        margin-top: 20px;
+        color: blueviolet;
+      }
+
+      .viewmore {
+        background-image:url(/assets/img/pricing/TotalRevenue.png) !important;
+      }
+
+      .revenueCalc {
+          flex: 0 0 20%;
+          max-width: 20%;
+          padding-left: 1%;
+      }
+
+      .error-message {
+        color: red;
+        font-weight: bold;
+      }
+      
+      .error-message:before {
+        content: "❌ "; /* Add an icon or any other symbol to indicate an error */
+        margin-right: 5px;
+      }
+      
+
+      

@@ -1,0 +1,102 @@
+
+<div class="row" >
+    <h2>Stock Analysis Page</h2>
+</div>
+<br>
+  <div class="row" style="height: 600px!important;">
+    <div class="col-xl-6 col-lg-12 mb-6">
+        <div class="row" style="height: 180px!important;border-radius: 1 rem;background-color: white;">
+            <div class="col-xl-6 col-lg-12 mb-3">
+                <div class="card-body">
+                    Name : {{stockResult.StockName}}
+                    <br>
+                    <br>
+                    ISIN : {{stockResult.ISIN}}
+                    <br>
+                    <br>
+                    WKN : {{stockResult.WKN}}
+                    <br>
+                    <br>
+                    Currency : {{stockResult.Currency}}
+                    <br>
+                </div> 
+            </div>
+            <div class="col-xl-6 col-lg-12 mb-3">
+                <div class="card-body">
+                    <span style="color:#6c9e37;font-size: 20px;">Live Price : 200.00</span>
+                    <br>
+                    <br>
+                    <span style="color:#6c9e37;font-size: 20px;">Change : +5.3%</span> 
+                    <br>
+                    <br>
+                </div> 
+            </div>    
+    </div>
+    <div class="separator mb-3"></div>
+    <div id="technical-analysis" style="height: 380px;"></div>
+        <!-- <div class="row-sm-6" id="chartingOpt" style="height: 320px!important;border-radius: 1 rem;background-color: white;">
+            <div class="chart" id="chart"></div>
+        </div> -->
+    </div>
+    <div class="col-xl-6 col-lg-12 mb-4" style="height: 370px!important;">
+        <div class="row-sm-6" style="height: 370px!important;border-radius: 1 rem;background-color: white;">
+            <div class="col-12 mb-6">
+                <div class= "row" style="height: 120px!important;">
+                    <div class="col-6">
+                    Industry: {{stockResult.Industry}}
+                    <br>
+                    Size: Large
+                    <br>
+                    Marketcap: {{stockResult.Marketcap}}
+                    <br>
+                    Last annual report: {{stockResult.LastAnnualReport}}
+                    <br>
+                    Stock quantity: {{stockResult.StockQuantity}}
+                    </div>
+                    <div class="col-6" style="height: 100px!important;padding-top: 15px;">
+                        <app-gradient-with-radial-progress-card
+                        [title]="scoreTitle"
+                        [percent]="scorePercent" [progressText]="scoreText">
+                        </app-gradient-with-radial-progress-card>
+                    </div>
+                </div>
+                <div class= "row card-body" style="height: 80px!important;">
+                    Last dividend: {{stockResult.LastDividend}}
+                    <br>
+                    Performance 1 Month: {{stockResult.PerfOneMonth}}
+                    <br>
+                    Performance 1 Year: {{stockResult.PerfOneYear}}
+                </div>
+                <div class= "row card-body" style="height: 120px!important;">
+                    {{stockResult.AboutCompany}}
+                    <br>
+                    <br>
+                    <a href="{{stockResult.CompanyUrl}}">{{stockResult.CompanyUrl}}</a> 
+                </div>
+            </div>
+         </div>
+         <div class="separator mb-3"></div>
+         <div class="row-sm-6" style="height: 190px!important;border-radius: 1 rem;background-color: white;">
+            <div *ngFor="let news of stockResult.RssNews;" class="col-12 mb-12">
+               <span style="color: black;"> {{news.Time}}</span> - <a style="color: blue;" href="{{news.NewsLink}}">{{news.Title}}</a> 
+            </div>
+         </div>
+    </div>
+</div>
+<br>
+<br>
+<div class="separator mb-5"></div>
+  <div class="row">
+    <div class="col-12 mb-4">
+        <app-sales-chart-card [title]="scorehistorycharttitle"></app-sales-chart-card>
+    </div>
+  </div>
+    <div class="row">
+        <div class="col-xl-6 col-lg-12 mb-4">
+            <app-compkpi [title]="companykpititle" [companyKpi]="singleStockInfo"></app-compkpi>
+        </div>
+        <div class="col-xl-6 col-lg-12 mb-4">
+            <app-scorepoints [companyKpi]="stockResult"></app-scorepoints>        
+      </div>
+  </div>
+\

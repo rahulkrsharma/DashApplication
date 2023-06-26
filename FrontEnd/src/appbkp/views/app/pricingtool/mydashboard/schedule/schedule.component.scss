@@ -1,0 +1,32 @@
+.room-container .img-container {
+  height: 100px;
+  width: 100px;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.room-container .img-container .image {
+  height: 100%;
+  width: 100%;
+}
+
+.room-container .room-info h2,
+.room-container .room-info h4 {
+  margin: 0;
+}
+
+.room-container .room-info h2 {
+  margin-top: 20px;
+}
+
+.room-availability p.not-available {
+  padding: 5px 30px;
+  background: rgb(241, 67, 67);
+  color: rgb(0, 0, 0);
+}
+
+.room-availability p.available {
+  padding: 5px 30px;
+  background: rgb(124, 209, 124);
+  color: rgb(0, 0, 0);
+}

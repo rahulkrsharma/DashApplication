@@ -1,0 +1,157 @@
+
+<div>
+    <div class="row">
+      <div class="col-12 projectRevenue mb-1 truncate">
+        <div class="card mb-4" style="height: 60px;">
+          <span class="headingDesign">Users Management</span>
+        </div>
+      </div>  
+    </div>
+    <div class="row">
+        <div class="col-12">        
+            <div class="card resourceestimates">
+              <span class="headingDesign">Users </span>
+              <div class="card-body">
+                <div class="row" >
+                  <div class="col-12 mb-4 data-table-rows" >
+                    <ngx-datatable [rows]="usersList" [rowHeight]="50" [columns]="usersColumns" [columnMode]="ColumnMode.flex" [limit]="itemsPerPage" [headerHeight]="30"
+                      [footerHeight]="100" #table [sorts]="[{ prop: 'title', dir: 'asc' }]" (select)="onSelect($event)"
+                      [selected]="selected" [selectionType]="SelectionType.checkbox">
+                      <ngx-datatable-column  name="displayName" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >User</span>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            {{ row.displayName }}
+                         </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="email" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Email</span>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            {{ row.email }}
+                         </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="UserRegDate" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Joining Date</span>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            <input
+                            style="width: 100%;height: 38px;"
+                            autofocus
+                            (blur)="updateUser($event, 'UserRegDate', rowIndex)"
+                            type="date"
+                            [(ngModel)]="row.UserRegDate"
+                            [value]="value"
+                          />
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="Level" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Level</span>
+                        </ng-template>
+                        <ng-template      let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select id="Level" class="form-control" 
+                          [(ngModel)]="row.Level"
+                           (change)="updateUser($event, 'Level', rowIndex)"  >
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let rate of ratesList" [value]="rate.Level" >
+                              {{rate.Level}}
+                            </option>
+                          </select>
+                           
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="IsAdmin" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Admin</span>
+                        </ng-template>
+                        <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select id="IsAdmin" class="form-control" 
+                          [(ngModel)]="row.IsAdmin"
+                          (change)="updateUser($event, 'IsAdmin', rowIndex)">
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let type of adminType" [value]="type.name">
+                              {{type.name}}
+                            </option>
+                          </select> 
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="IsActivated" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Activated</span>
+                        </ng-template>
+                        <ng-template   let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                          <select id="IsActivated" class="form-control" 
+                          [(ngModel)]="row.IsActivated"
+                          (change)="updateUser($event, 'IsActivated', rowIndex)">
+                            <option selected>{{ 'input-groups.choose' | translate }}</option>
+                            <option *ngFor="let type of adminType" [value]="type.name">
+                              {{type.name}}
+                            </option>
+                          </select> 
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="Location" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Location</span>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            {{ row.Location }}
+                         </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="RackRate" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Rack Rate</span>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            {{ row.RackRate }}
+                         </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column  name="CostRate" [flexGrow]="1">
+                        <ng-template  let-column="column" ngx-datatable-header-template>
+                            <span >Cost Rate</span>
+                        </ng-template>
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template>
+                            {{ row.CostRate }}
+                         </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="" [flexGrow]="0.4">
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                            <i class="material-icons" style="color: red;" (click)="deleteUserDetails(rowIndex)">delete</i>
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-column name="" [flexGrow]="0.6">
+                        <ng-template let-row="row" let-value="value" let-rowIndex="rowIndex" ngx-datatable-cell-template> 
+                            <!-- <i class="material-icons" style="color:green;margin-left:-15px" (click)="addRateRow() ">add_circle</i> -->
+                            <i class="material-icons" style="color:green;margin-left:-15px" (click)="saveUserDetails(rowIndex)">save</i> 
+                        </ng-template>
+                      </ngx-datatable-column>
+                      <ngx-datatable-footer>
+                        <ng-template ngx-datatable-footer-template let-rowCount="rowCount" let-pageSize="pageSize"
+                          let-selectedCount="selectedCount" let-curPage="curPage" let-offset="offset" let-limit="limit">
+                          <div class="w-100 d-flex justify-content-center">
+                            <pagination [totalItems]="rowCount" [itemsPerPage]="pageSize" [maxSize]="5"
+                              (pageChanged)="table.onFooterPage($event)"
+                              [customNextTemplate]="nextTemplate" [customPreviousTemplate]="prevTemplate">
+                            </pagination>
+                          </div>
+                        </ng-template>
+                      </ngx-datatable-footer>
+                    </ngx-datatable> 
+                             
+                </div>
+            </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #nextTemplate let-disabled="disabled" let-currentPage="currentPage">
+      <i class='simple-icon-arrow-right'></i>
+    </ng-template>
+    <ng-template #prevTemplate let-disabled="disabled" let-currentPage="currentPage">
+      <i class='simple-icon-arrow-left'></i>
+    </ng-template>
+    
