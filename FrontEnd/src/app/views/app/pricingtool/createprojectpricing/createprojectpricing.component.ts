@@ -881,7 +881,7 @@ updateContractorValue(event, cell, rowIndex) {
   this.priceQuoteContractor[rowIndex][cell] = event.target.value;
  
 
-  //Level Logic
+   //Level Logic // -- Rack Rate- Cost Rate & Discount Calculation
   if(this.priceQuoteContractor[rowIndex]['Level']!=""){
     this.CalculateContractorRates(this.priceQuoteContractor[rowIndex]['Level'],rowIndex);
   }
